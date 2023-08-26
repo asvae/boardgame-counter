@@ -59,7 +59,7 @@ const modelValueProxy = computed({
     align-items: center;
 
     .value {
-      font-size: 120px;
+      font-size: 10rem;
       color: white;
       user-select: none;
     }
