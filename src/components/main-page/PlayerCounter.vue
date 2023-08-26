@@ -103,6 +103,8 @@ const modelValueProxy = computed({
     font-size: 4rem;
     color: white;
     bottom: 0;
+    user-select: none;
+    pointer-events: none;
   }
 }
 </style>
