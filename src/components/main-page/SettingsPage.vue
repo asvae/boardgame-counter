@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {config, reset} from "@/store/store";
+import {config, reset} from "../../store/store";
 
 </script>
 

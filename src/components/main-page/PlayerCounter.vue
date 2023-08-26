@@ -8,7 +8,7 @@ const props = defineProps({
 })
 
 const emit = defineEmits<{
-  'update:modelValue': number,
+  (event: 'update:modelValue', value: number): void,
 }>()
 
 const modelValueProxy = computed({

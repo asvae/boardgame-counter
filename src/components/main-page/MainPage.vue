@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import PlayerCounter from './PlayerCounter.vue'
-import {config} from "@/store/store";
+import {config} from "../../store/store";
 </script>
 
 <template>
