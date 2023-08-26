@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ChangeButton from './ChangeButton.vue'
 import {computed, ref} from "vue";
-import {useChangedValue} from "@/utils/changed-value";
+import {useChangedValue} from "../../utils/changed-value";
 
 const props = defineProps({
   modelValue: {type: Number, required: true},
