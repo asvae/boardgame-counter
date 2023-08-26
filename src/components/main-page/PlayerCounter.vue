@@ -32,7 +32,7 @@ const changedValue = useChangedValue(valueComputed)
       :style="{backgroundColor: color}"
   >
     <div class="value-container">
-      <va-dropdown placement="left" :stateful="false" :modelValue="!!changedValue" :offset="10">
+      <va-dropdown auto-placement="false" placement="left" :stateful="false" :modelValue="!!changedValue" :offset="10">
         <template #anchor>
           <span class="value">{{ modelValueProxy }}</span>
         </template>
