@@ -1,5 +1,5 @@
 import {reactive} from "vue";
-import {getRandomColor} from "@/utils/color-randomizer";
+import {getRandomColor} from "../utils/color-randomizer";
 
 type PlayerCounter = {
   value: number,

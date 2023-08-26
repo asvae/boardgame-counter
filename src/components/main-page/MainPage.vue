@@ -3,7 +3,7 @@ import PlayerCounter from './PlayerCounter.vue'
 import {config} from "../../store/store";
 import {computed} from "vue";
 
-const getItemStyle = index => {
+const getItemStyle = (index: number) => {
   if (config.playerCounters.length % 2 === 1 && index === config.playerCounters.length - 1) {
     return { gridColumn: 'span 2' };
   }
