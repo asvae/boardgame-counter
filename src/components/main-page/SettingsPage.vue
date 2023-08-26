@@ -7,9 +7,15 @@ import {config, reset} from "../../store/store";
   <div class="settings-page">
     <router-link to="/" class="settings-icon">🔙</router-link>
 
-    <va-counter style="width: 100%" label="Default points" buttons v-model="config.defaultPoints"/>
+    <va-card title="Settings">
+      <va-counter style="width: 100%" label="Default points" buttons v-model="config.defaultPoints"/>
+      <div class="mt-6" v-for="(playerCounter, index) in config.playerCounters">
+        <va-input :label="`Player: ${index}`" v-model="playerCounter.name"/>
+        <va-color-input class="mt-4" v-model="playerCounter.color"/>
+      </div>
 
-    <va-button class="mt-4" @click="reset(), $router.push('/')">Reset</va-button>
+      <va-button class="mt-8" @click="reset(), $router.push('/')">Reset</va-button>
+    </va-card>
   </div>
 </template>
 

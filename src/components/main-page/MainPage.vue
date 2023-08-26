@@ -9,6 +9,7 @@ import {config} from "../../store/store";
         v-for="counter in config.playerCounters"
         v-model="counter.value"
         :color="counter.color"
+        :name="counter.name"
         style="height: 50%"
     />
     <router-link to="settings" class="settings-icon">⚙</router-link>

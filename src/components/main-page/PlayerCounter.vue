@@ -5,6 +5,7 @@ import {computed} from "vue";
 const props = defineProps({
   modelValue: {type: Number, required: true},
   color: {type: String, required: true},
+  name: {type: String, required: true},
 })
 
 const emit = defineEmits<{
@@ -41,6 +42,7 @@ const modelValueProxy = computed({
         v-model="modelValueProxy"
         :increment-value="-5"
     />
+    <div class="name">{{name}}</div>
   </div>
 </template>
 
@@ -92,6 +94,15 @@ const modelValueProxy = computed({
     &.bottom {
       top: calc(50% + 1rem);
     }
+  }
+
+  .name {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    color: white;
+    bottom: 0;
   }
 }
 </style>
