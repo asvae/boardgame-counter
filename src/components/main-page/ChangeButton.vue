@@ -20,10 +20,12 @@ defineProps({
 <style scoped>
 .change-button {
   font-family: 'Fira Code', monospace;
+  color: rgba(255, 255, 255, 0.9);
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 0.5rem;
-  width: 3rem;
-  height: 3rem;
+  font-weight: 700;
+  width: 4rem;
+  height: 4rem;
   font-size: 1.5rem;
   display: flex;
   align-items: center;

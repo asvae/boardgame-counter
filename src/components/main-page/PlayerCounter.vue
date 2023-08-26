@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import ChangeButton from './ChangeButton.vue'
-import {computed} from "vue";
+import {computed, ref} from "vue";
+import {useChangedValue} from "@/utils/changed-value";
 
 const props = defineProps({
   modelValue: {type: Number, required: true},
@@ -20,6 +21,9 @@ const modelValueProxy = computed({
     emit('update:modelValue', value)
   },
 })
+
+const valueComputed = computed(() => props.modelValue);
+const changedValue = useChangedValue(valueComputed)
 </script>
 
 <template>
@@ -28,7 +32,14 @@ const modelValueProxy = computed({
       :style="{backgroundColor: color}"
   >
     <div class="value-container">
-      <span class="value">{{ modelValueProxy }}</span>
+      <va-dropdown placement="left" :stateful="false" :modelValue="!!changedValue" :offset="10">
+        <template #anchor>
+          <span class="value">{{ modelValueProxy }}</span>
+        </template>
+        <va-dropdown-content class="change-display">
+          <span v-if="!!changedValue">{{changedValue>0 ? '+' : ''}}{{changedValue}}</span>
+        </va-dropdown-content>
+      </va-dropdown>
     </div>
     <div class="block top" @click="$emit('update:modelValue', modelValueProxy + 1)"/>
     <div class="block bottom" @click="$emit('update:modelValue', modelValueProxy - 1)"/>
@@ -46,7 +57,14 @@ const modelValueProxy = computed({
   </div>
 </template>
 
-<style scoped>
+<style>
+.change-display {
+  background-color: transparent;
+  box-shadow: none;
+  color: #00bd7e !important;
+  font-size: 4rem;
+}
+
 .player-counter {
   font-family: 'Fira Code', monospace;
   width: 100%;
@@ -59,11 +77,13 @@ const modelValueProxy = computed({
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
+    pointer-events: none;
 
     .value {
       font-size: 10rem;
+      font-width: 700;
       color: white;
-      user-select: none;
     }
   }
 
@@ -85,7 +105,7 @@ const modelValueProxy = computed({
 
   .button {
     position: absolute;
-    right: 2rem;
+    right: 1.5rem;
 
     &.top {
       bottom: calc(50% + 1rem);
