@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import {useWakeLock} from "@/utils/wake-lock";
 
+useWakeLock()
 </script>
 
 <template>

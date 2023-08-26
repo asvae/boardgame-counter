@@ -9,6 +9,9 @@ import {config, reset} from "../../store/store";
 
     <va-card title="Settings">
       <va-counter style="width: 100%" label="Default points" buttons v-model="config.defaultPoints"/>
+
+      <va-checkbox class="mt-6" label="Use wake lock" v-model="config.useWakeLock"/>
+
       <div class="mt-6" v-for="(playerCounter, index) in config.playerCounters">
         <va-input :label="`Player: ${index}`" v-model="playerCounter.name"/>
         <va-color-input class="mt-4" v-model="playerCounter.color"/>
