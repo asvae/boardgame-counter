@@ -12,8 +12,8 @@ function hslToHex(h: number, s: number, l: number): string {
 // fixed saturation and brightness
 export function getRandomColor(): string {
   const h = Math.random() * 360;
-  const s = 70;  // 70%
-  const l = 40;  // 40%
+  const s = 80;  // 70%
+  const l = 60;  // 40%
 
   return hslToHex(h, s, l);
 }

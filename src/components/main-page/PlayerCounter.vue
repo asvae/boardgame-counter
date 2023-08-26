@@ -32,7 +32,7 @@ const changedValue = useChangedValue(valueComputed)
       :style="{backgroundColor: color}"
   >
     <div class="value-container">
-      <va-dropdown auto-placement="false" placement="left" :stateful="false" :modelValue="!!changedValue" :offset="10">
+      <va-dropdown :auto-placement="false" placement="top" :stateful="false" :modelValue="!!changedValue" :offset="-40">
         <template #anchor>
           <span class="value">{{ modelValueProxy }}</span>
         </template>
@@ -64,6 +64,8 @@ const changedValue = useChangedValue(valueComputed)
   color: rgba(255, 255, 255, 0.7) !important;
   font-weight: 700;
   font-size: 4rem;
+  pointer-events: none;
+  user-select: none;
 }
 
 .player-counter {

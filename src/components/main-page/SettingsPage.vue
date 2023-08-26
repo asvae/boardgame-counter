@@ -6,15 +6,15 @@ import {config, resetCounts, addPlayer} from "../../store/store";
   <div class="settings-page">
     <router-link to="/" class="settings-icon">🔙</router-link>
 
-    <va-card title="Settings">
-      <va-counter style="width: 100%" label="Default points" buttons v-model="config.defaultPoints"/>
+    <va-card title="Settings" class="m-6">
+      <va-counter class="w-full" style="width: 100%" label="Default points" buttons v-model="config.defaultPoints"/>
 
       <va-checkbox class="mt-6" label="Use wake lock" v-model="config.useWakeLock"/>
 
       <div class="mt-6" v-for="(playerCounter, index) in config.playerCounters">
-        <va-input :label="`Player: ${index+1}`" v-model="playerCounter.name"/>
+        <va-input class="w-full" :label="`Player: ${index+1}`" v-model="playerCounter.name"/>
         <va-color-input class="mt-4" v-model="playerCounter.color"/>
-        <va-button size="small" @click="config.playerCounters.pop()">-</va-button>
+        <va-button class="mt-4" size="small" @click="config.playerCounters.pop()">-</va-button>
       </div>
       <va-button class="mt-4" @click="addPlayer()">+</va-button>
       <br>

@@ -25,7 +25,7 @@ const gridClass = computed(() => {
 <template>
   <div class="main-page" :class="gridClass">
     <player-counter
-        class="flex-1 min-h-1/2"
+        class="flex-1"
         v-for="(counter, index) in config.playerCounters"
         :style="getItemStyle(index)"
         :key="index"
