@@ -8,7 +8,7 @@ export const useWakeLock = () => {
     if ('wakeLock' in navigator && config.useWakeLock) {
       try {
         wakeLock = await navigator.wakeLock.request('screen');
-      } catch (err) {
+      } catch (err: any) {
         console.error(`Could not acquire wake lock: ${err.name}, ${err.message}`);
       }
     }
