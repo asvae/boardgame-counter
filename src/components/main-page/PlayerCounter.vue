@@ -59,9 +59,10 @@ const changedValue = useChangedValue(valueComputed)
 
 <style>
 .change-display {
-  background-color: transparent;
-  box-shadow: none;
-  color: #00bd7e !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-weight: 700;
   font-size: 4rem;
 }
 
